@@ -1,0 +1,181 @@
+/* Animations */
+@keyframes wiggle {
+
+    0% {
+      transform: rotate(-2deg);
+    }
+  
+    40% {
+      transform: rotate(4deg);
+    }
+  
+    80% {
+      transform: rotate(-4deg);
+    }
+  
+    100% {
+      transform: rotate(2deg);
+    }
+  
+  }
+
+* {
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Noto Sans', sans-serif;
+} 
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	background-color: rgb(107, 172, 190);
+	color: black;
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+header {
+	padding: 2rem 1rem;
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+header h1{ 
+	font-size: 2.5rem;
+	font-weight: 300;
+	margin-bottom: 1rem;
+	color: white;
+}
+
+#new-task {
+	display: flex;
+	border: none;
+	border-radius: 10px;
+}
+
+button {
+	margin: 0 0.5rem;
+	font-size: 1.125rem;
+	font-weight: 700;
+	border: none;
+	padding: 1rem;
+	border-radius: 10px;
+	text-transform: uppercase;
+}
+
+#new-task-input {
+	flex: 1 1 0%;
+	background-color: rgb(219, 219, 219);
+	padding: 1rem;
+	font-size: 1.25rem;
+	border: none;
+	border-radius: 10px;
+}
+
+#new-task-input:placeholder {
+	color: rgb(89, 89, 89);
+}
+
+#new-task-submit {
+	color: white;
+	font-size: 1.25rem;
+	font-weight: 700;
+	background-color: rgb(87, 212, 87);
+	overflow: hidden;
+	cursor: pointer;
+	transition: 0.5s;
+	border: none;
+	border-radius: 10px;
+	padding: 1rem;
+	margin: 0 0.5rem;
+}
+#new-task-submit i {
+	transform: scale(1.8);
+	padding: 0 .3rem;
+}
+#new-task-submit:hover {
+	animation: wiggle .5s;
+}
+
+main {
+	flex: 1 1 0%;
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.task-list {
+	padding: 1rem;
+}
+
+.task-list h2 {
+	font-size: 1.5rem;
+	font-weight: 300;
+	color: black;
+	margin-bottom: 1rem;
+}
+
+#tasks .task {
+	display: flex;
+	justify-content: space-between;
+	border-radius: 10px;
+	margin-bottom: 1rem;
+}
+
+.task .content {
+	flex: 1 1 0%;
+}
+
+.task .content .text {
+	background-color: rgb(107, 172, 190);
+	color: white;
+	font-size: 1.125rem;
+	padding: 1rem;
+	border: none;
+	border-radius: 10px;
+	width: 100%;
+	display: block;
+	transition: 0.4s;
+}
+
+.task .content .text:not(:read-only) {
+	color: rgb(58, 58, 58);
+}
+
+.task .actions {
+	display: flex;
+	margin: 0rem;
+	
+}
+
+.task .actions button {
+	cursor: pointer;
+	margin: 0 0.5rem;
+	font-size: 1.125rem;
+	font-weight: 700;
+	border: none;
+	padding: 0 1.4rem;
+	border-radius: 10px;
+	text-transform: uppercase;
+	transition: 0.4s;
+	color: rgb(255, 255, 255);
+}
+
+.task .actions button:hover {
+	opacity: 0.8;
+	animation: wiggle .5s;
+
+}
+
+.task .actions .edit {
+	margin: 0 0.5rem;
+	background-color: rgb(89, 89, 89);
+}
+
+.task .actions .delete {
+	background-color: #ff0000;
+	
+}
